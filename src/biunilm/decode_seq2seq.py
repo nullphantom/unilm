@@ -194,7 +194,7 @@ def main():
             if args.subset > 0:
                 logger.info("Decoding subset: %d", args.subset)
                 input_lines = input_lines[:args.subset]
-        data_tokenizer = WhitespaceTokenizer() if args.tokenized_input else tokenizer
+        data_tokenizer = tokenizer
         input_lines = [data_tokenizer.tokenize(
             x)[:max_src_length] for x in input_lines]
         input_lines = sorted(list(enumerate(input_lines)),
